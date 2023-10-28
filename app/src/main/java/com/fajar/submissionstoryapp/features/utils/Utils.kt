@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.net.Uri
 import android.os.Environment
+import android.text.TextUtils
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
@@ -130,4 +131,12 @@ fun showPositiveAlert(context: Context, title: String, message: String) {
             d0.dismiss()
         }
     }.create().show()
+}
+
+fun CharSequence.isEmailValid(): Boolean {
+    return !TextUtils.isEmpty(this) && android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
+}
+
+fun CharSequence.isPasswordValid(): Boolean {
+    return !TextUtils.isEmpty(this) && this.length < 6
 }

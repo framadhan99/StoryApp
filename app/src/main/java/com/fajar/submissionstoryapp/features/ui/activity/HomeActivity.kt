@@ -9,12 +9,17 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fajar.submissionstoryapp.R
+import com.fajar.submissionstoryapp.core.data.resource.local.page.LoadingStateAdapter
+import com.fajar.submissionstoryapp.databinding.ActivityHomeBinding
+import com.fajar.submissionstoryapp.features.ui.adapter.HomeStoryAdapter
+import com.fajar.submissionstoryapp.features.ui.fragments.AddStoryFragment
+import com.fajar.submissionstoryapp.features.ui.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
 
-    private val homeVM: HomeVM by viewModels()
+    private val homeVM: HomeViewModel by viewModels()
     private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,11 +83,11 @@ class HomeActivity : AppCompatActivity() {
                             homeVM.removeSession()
                             true
                         }
-                        R.id.map -> {
-                            val intent = Intent(applicationContext, MapsActivity::class.java)
-                            startActivity(intent)
-                            true
-                        }
+//                        R.id.map -> {
+//                            val intent = Intent(applicationContext, MapsActivity::class.java)
+//                            startActivity(intent)
+//                            true
+//                        }
                         else -> true
                     }
                 }

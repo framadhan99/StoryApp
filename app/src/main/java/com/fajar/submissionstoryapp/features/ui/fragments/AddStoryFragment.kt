@@ -23,6 +23,7 @@ import com.fajar.submissionstoryapp.features.utils.Const.PERMISSIONS
 import com.fajar.submissionstoryapp.R
 import com.fajar.submissionstoryapp.databinding.FragmentAddStoryBinding
 import com.fajar.submissionstoryapp.features.ui.activity.CameraActivity
+import com.fajar.submissionstoryapp.features.ui.activity.HomeActivity
 import com.fajar.submissionstoryapp.features.ui.viewmodel.AddStoryViewModel
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
